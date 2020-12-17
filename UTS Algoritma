@@ -1,0 +1,156 @@
+#Ulangan Tengah Semester
+#Ridwan Satria Wicaksana
+#33420419
+import pandas as pd
+i=0
+nama=[]
+umur=[]
+def Data_Nasabah():
+    print("")
+    print("----------Data Nasabah----------")
+    print("   No  Nama                  Umur")
+    for n in range(i):
+        print(n+1,' ',nama[n],'                 ',umur[n])
+        
+
+def nota(x,y,z,nama,namabarang):
+    print("")
+    print("----------BANK SAMPAH SEJAHTERA----------")
+    print("Nama Nasabah            :",nama)
+    print("Jenis sampah            :",namabarang)
+    print("Berat/Jumlah barang     :",x)
+    print("Harga/(kg/satuan)       :",y)
+    print("Total uang yang didapat :", z)
+    print("---------------Terima Kasih--------------")
+    print("-------Menabung Uang dengan Sampah-------")
+    print("")
+
+def Data(a):
+    berat = int(input("Berat barang:"))
+    jumlah_bayar = berat*a
+    nota(berat,a,jumlah_bayar, nama, namabarang)
+
+x = 1
+while x!=0:
+    print("\t\tSelamat Datang di Bank Sampah Sejahtera")
+    print("\nAnda masuk sebagai?\n")
+    print("1.Admin")
+    print("2.Nasabah bank")
+    print("3.Keluar\n")
+    pilihan = int(input("Masukkan pilihan 1/2/3"))
+
+    if pilihan==1:
+        print("1. Masukkan Nama Nasabah")
+        print("2. Daftar Nama Nasabah ")
+        choice = int(input("Masukkan pilihan anda"))
+        if choice==1:
+            x = 2
+            while x!=0:
+                print("Masukkan data ke-",i+1)
+                nama.append(input("Nama Nasabah :"))
+                umur.append(input("Umur Nasabah [2 digit angka]:"))
+                if len(umur[i])!=2:
+                    print("Umur Salah")
+                    print()
+                    nama.pop(i)
+                    umur.pop(i)
+                    continue
+                lagi=""
+                while lagi!='y' and lagi!='t':
+                    lagi=input("Input lagi [y/t]: ")
+                    i+=1
+                if lagi=='t':
+                    break
+                    x = 1
+                  
+            
+        if choice==2:
+            Data_Nasabah()
+
+
+
+    if pilihan ==2:
+        Daftar = {'Jenis Limbah':['','Aluminium (kaleng sprite, panci aluminium)','Aqua gelas(bersih/kotor)',
+        'Bak (semua plastik tebal, tutup galon, botol)','Besi','Botol Aqua (bersih/kotor)',
+        'Botol beling kecap/bir','Kaleng seng','Kardus (baik/jelek)','Kertas putih (HVS, foto kopi dsb)',
+        'Koran (baik/jelek)','Kresek, tas, karpet, talang, kertas mika, ban','Majalah, tabloid, buku telepon',
+        'Pecahan beling apa saja','Plastik Putih polos (bungkus gula dsb)','Sandal, sepatu yang bersifat lentur','Tembaga/Kuningan'], 
+        'Harga Rp/kg':['',5500,3000,1000,1000,1000,200,300,400,900,200,150,300,100,500,100,25000]}
+        Daftar_menu = pd.DataFrame(Daftar)
+        nama = input("Masukkan Nama anda\n")
+        print("\t\t\tDaftar Harga Limbah\n")
+        print(Daftar_menu)
+        pilihan = int(input("Masukkan pilihan anda"))
+        if pilihan==1:
+            namabarang = 'Aluminium (kaleng sprite, panci aluminium)'
+            a = 5500
+            Data(a)
+        elif pilihan==2:
+            namabarang = 'Aqua gelas(bersih/kotor)'
+            a = 3000
+            Data(a)
+        elif pilihan==3:
+            namabarang = 'Bak (semua plastik tebal, tutup galon, botol)'
+            a = 1000
+            Data(a)
+        elif pilihan==4:
+            namabarang = 'Besi'
+            a = 1000
+            Data(a)
+        elif pilihan==5:
+            namabarang = 'Botol Aqua (bersih/kotor)'
+            a = 1000
+            Data(a)
+        elif pilihan==6: 
+            namabarang = 'Botol beling kecap/bir'
+            a = 200
+            Data(a)
+        elif pilihan==10:
+            namabarang = 'Koran (baik/jelek)'
+            a = 200
+            Data(a)
+        elif pilihan==7:
+            namabarang = 'Kaleng seng'
+            a = 300
+            Data(a)
+        elif pilihan==12:
+            namabarang = 'Majalah, tabloid, buku telepon'
+            a = 300
+            Data(a)
+        elif pilihan==8:
+            namabarang = 'Kardus (baik/jelek)'
+            a = 400
+            Data(a)
+        elif pilihan==9:
+            namabarang = 'Kertas putih (HVS, foto kopi dsb)'
+            a = 900
+            Data(a)
+        elif pilihan==11:
+            namabarang = 'Kresek, tas, karpet, talang, kertas mika, ban'
+            a = 150
+            Data(a)
+        elif pilihan==13:
+            namabarang = 'Pecahan beling apa saja'
+            a = 100
+            Data(a)
+        elif pilihan==15:
+            namabarang = 'Sandal, sepatu yang bersifat lentur'
+            a = 100
+            Data(a)
+        elif pilihan==14:
+            namabarang = 'Plastik Putih polos (bungkus gula dsb)'
+            a = 500
+            Data(a)
+        elif pilihan==16:
+            namabarang = 'Tembaga/Kuningan' 
+            a = 25000
+            Data(a)
+        else:
+            print("Data yang anda masukkan salah\n ")
+    elif pilihan==3:
+        x = 0
+    
+
+        
+
+
