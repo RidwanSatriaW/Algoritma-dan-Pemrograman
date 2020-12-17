@@ -1,6 +1,7 @@
 #Ulangan Tengah Semester
 #Ridwan Satria Wicaksana
 #33420419
+#Program Bank Sampah
 import pandas as pd
 i=0
 nama=[]
